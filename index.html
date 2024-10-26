@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>TicTacToe</h1>
+        <h3></h3>
+    </header>
+    <section>
+        <div>
+            <button onclick="step(1)"></button>
+            <button onclick="step(2)"></button>
+            <button onclick="step(3)"></button><br>
+            <button onclick="step(4)"></button>
+            <button onclick="step(5)"></button>
+            <button onclick="step(6)"></button><br>
+            <button onclick="step(7)"></button>
+            <button onclick="step(8)"></button>
+            <button onclick="step(9)"></button>
+        </div>
+    </section>
+    <script>
+        let stepplayer = "O"
+        const step = (a) => {
+            document.querySelectorAll("button")[a - 1].innerHTML = stepplayer;
+            document.querySelector("h3").innerHTML = "Player: " + (stepplayer === "O" ? "X" : "O");
+            stepplayer == "O" ? stepplayer = "X" : stepplayer = "O";
+            const checkwinornot = () => {
+                if (document.querySelectorAll("button")[0].innerHTML == document.querySelectorAll("button")[1].innerHTML && document.querySelectorAll("button")[1].innerHTML == document.querySelectorAll("button")[2].innerHTML && document.querySelectorAll("button")[0].innerHTML != "") {
+                    alert("Winner is " + document.querySelectorAll("button")[0].innerHTML);
+                }
+                else if (document.querySelectorAll("button")[3].innerHTML == document.querySelectorAll("button")[4].innerHTML && document.querySelectorAll("button")[4].innerHTML == document.querySelectorAll("button")[5].innerHTML && document.querySelectorAll("button")[3].innerHTML != "") {
+                    alert("Winner is " + document.querySelectorAll("button")[3].innerHTML);
+                }
+                else if(document.querySelectorAll("button")[6].innerHTML == document.querySelectorAll("button")[7].innerHTML && document.querySelectorAll("button")[7].innerHTML == document.querySelectorAll("button")[8].innerHTML && document.querySelectorAll("button")[6].innerHTML != "") {
+                    alert("Winner is " + document.querySelectorAll("button")[6].innerHTML);
+                }
+                else if (document.querySelectorAll("button")[0].innerHTML == document.querySelectorAll("button")[4].innerHTML && document.querySelectorAll("button")[4].innerHTML == document.querySelectorAll("button")[8].innerHTML && document.querySelectorAll("button")[0].innerHTML != "") {
+                    alert("Winner is " + document.querySelectorAll("button")[0].innerHTML);
+                }
+                else if (document.querySelectorAll("button")[2].innerHTML == document.querySelectorAll("button")[4].innerHTML && document.querySelectorAll("button")[4].innerHTML == document.querySelectorAll("button")[6].innerHTML && document.querySelectorAll("button")[2].innerHTML != "") {
+                    alert("Winner is " + document.querySelectorAll("button")[2].innerHTML);
+                }
+                else if (document.querySelectorAll("button")[0].innerHTML == document.querySelectorAll("button")[3].innerHTML && document.querySelectorAll("button")[3].innerHTML == document.querySelectorAll("button")[6].innerHTML && document.querySelectorAll("button")[0].innerHTML != "") {
+                    alert("Winner is " + document.querySelectorAll("button")[0].innerHTML);
+                }
+                else if (document.querySelectorAll("button")[1].innerHTML == document.querySelectorAll("button")[4].innerHTML && document.querySelectorAll("button")[4].innerHTML == document.querySelectorAll("button")[7].innerHTML && document.querySelectorAll("button")[1].innerHTML != "") {
+                    alert("Winner is " + document.querySelectorAll("button")[1].innerHTML);
+                }
+                else if (document.querySelectorAll("button")[2].innerHTML == document.querySelectorAll("button")[5].innerHTML && document.querySelectorAll("button")[5].innerHTML == document.querySelectorAll("button")[8].innerHTML && document.querySelectorAll("button")[2].innerHTML != "") {
+                    alert("Winner is " + document.querySelectorAll("button")[2].innerHTML);
+                }
+                else if (document.querySelectorAll("button")[0].innerHTML != "" && document.querySelectorAll("button")[1].innerHTML != "" && document.querySelectorAll("button")[2].innerHTML != "" && document.querySelectorAll("button")[3].innerHTML != "" && document.querySelectorAll("button")[4].innerHTML != "" && document.querySelectorAll("button")[5].innerHTML != "" && document.querySelectorAll("button")[6].innerHTML != "" && document.querySelectorAll("button")[7].innerHTML != "" && document.querySelectorAll("button")[8].innerHTML != "") {
+                    alert("Game Draw");
+                }
+            }
+            checkwinornot();
+        }
+    </script>
+</body>
+</html>
